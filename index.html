@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matifandy8/NeoBrutalismCSS/dist/index.min.css">
+  <link rel="stylesheet" href="vendor/cursanimation.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -160,6 +161,21 @@
     <a href="#home">Kembali ke atas ↑</a>
   </footer>
 
+  <script src="vendor/cursanimation.min.js"></script>
+  <script>
+    CursAnimation.init({
+      cursor: "ring",
+      color: "#111111",
+      color2: "#ffdc58",
+      size: 34,
+      movement: "elastic",
+      magnetic: { enabled: true, radius: 90, strength: 0.35 },
+      trail: { enabled: true, length: 12, style: "dots", size: 0.5 },
+      clickEffects: { enabled: true, ripple: true, particles: true, count: 10 },
+      hoverEffects: true,
+      hoverScale: 1.7
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
