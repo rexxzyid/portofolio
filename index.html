@@ -177,6 +177,14 @@
       hoverScale: 1.7,
       touch: "tap"
     });
+
+    CursAnimation.rebuild({
+      selector: ".reveal",
+      threshold: 0.1,
+      duration: 700,
+      agents: 2,
+      revealClass: "visible"
+    });
   </script>
   <script src="script.js"></script>
 </body>
