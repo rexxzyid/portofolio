@@ -18,8 +18,9 @@
   <title>RexxHayanasi — Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="vendor/cursanimation.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rexxzyid/cursanimation@1.5.4/dist/cursanimation.min.css">
   <link rel="stylesheet" href="styles.css">
   <noscript><style>.reveal { opacity: 1 !important; }</style></noscript>
 </head>
@@ -171,43 +172,48 @@
     <a href="#home">Kembali ke atas ↑</a>
   </footer>
 
-  <script src="vendor/cursanimation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/rexxzyid/cursanimation@1.5.4/dist/cursanimation.min.js"></script>
   <script>
-    CursAnimation.init({
-      cursor: "ring",
-      color: "#f3f0e8",
-      color2: "#ffd84d",
-      size: 32,
-      movement: "elastic",
-      magnetic: { enabled: true, radius: 90, strength: 0.35 },
-      swarm: { enabled: true, count: 20, radius: 160, speed: 1, avoid: 52, hideCursor: true },
-      trail: { enabled: true, length: 12, style: "dots", size: 0.5 },
-      clickEffects: { enabled: true, ripple: true, particles: true, count: 10 },
-      hoverEffects: true,
-      hoverScale: 1.7,
-      touch: "tap"
-    });
+    const finePointer = matchMedia("(pointer: fine)").matches
 
-    CursAnimation.rebuild({
-      selector: ".reveal",
-      threshold: 0.14,
-      duration: matchMedia("(max-width: 720px)").matches ? 340 : 440,
-      agents: matchMedia("(max-width: 720px)").matches ? 1 : 2,
-      color: "auto",
-      autoDark: "#111111",
-      autoLight: "#f3f0e8",
-      colors: ["#f3f0e8", "#ffd84d", "#5cc8ff", "#8b7cff", "#ff9ec4"],
-      label: !matchMedia("(max-width: 720px)").matches,
-      labelMinArea: 8000,
-      stagger: matchMedia("(max-width: 720px)").matches ? 34 : 60,
-      maxConcurrent: matchMedia("(max-width: 720px)").matches ? 1 : 2,
-      typeText: true,
-      typeSelector: "h1,h2,h3,h4,h5,h6,p,li,blockquote",
-      charDelay: matchMedia("(max-width: 720px)").matches ? 7 : 9,
-      maxTypeDuration: matchMedia("(max-width: 720px)").matches ? 780 : 980,
-      pen: true,
-      revealClass: "visible"
-    });
+    if (window.CursAnimation && finePointer) {
+      CursAnimation.init({
+        cursor: "ring",
+        color: "#f3f0e8",
+        color2: "#ffd84d",
+        size: 32,
+        movement: "elastic",
+        magnetic: { enabled: true, radius: 90, strength: 0.35 },
+        swarm: { enabled: true, count: 10, radius: 150, speed: 0.9, avoid: 50, hideCursor: true },
+        trail: { enabled: false },
+        clickEffects: { enabled: true, ripple: true, particles: true, count: 6 },
+        hoverEffects: true,
+        hoverScale: 1.7,
+        touch: "tap"
+      });
+    }
+
+    if (window.CursAnimation) {
+      CursAnimation.rebuild({
+        selector: ".reveal",
+        threshold: 0.14,
+        duration: matchMedia("(max-width: 720px)").matches ? 340 : 440,
+        agents: matchMedia("(max-width: 720px)").matches ? 1 : 2,
+        color: "auto",
+        autoDark: "#111111",
+        autoLight: "#f3f0e8",
+        colors: ["#f3f0e8", "#ffd84d", "#5cc8ff", "#8b7cff", "#ff9ec4"],
+        label: false,
+        stagger: matchMedia("(max-width: 720px)").matches ? 34 : 60,
+        maxConcurrent: matchMedia("(max-width: 720px)").matches ? 1 : 2,
+        typeText: true,
+        typeSelector: "h1,h2,h3,h4,h5,h6,p,li,blockquote",
+        charDelay: matchMedia("(max-width: 720px)").matches ? 7 : 9,
+        maxTypeDuration: matchMedia("(max-width: 720px)").matches ? 780 : 980,
+        pen: true,
+        revealClass: "visible"
+      });
+    }
   </script>
   <script src="script.js"></script>
   <script type="application/ld+json">
