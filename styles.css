@@ -596,13 +596,10 @@ footer p {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .65s ease, transform .65s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @keyframes ticker {

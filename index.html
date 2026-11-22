@@ -181,13 +181,17 @@
     CursAnimation.rebuild({
       selector: ".reveal",
       threshold: 0.12,
-      duration: 620,
+      duration: 480,
       agents: 2,
       color: "#111111",
       colors: ["#111111", "#ffdc58", "#ff8a00", "#0d99ff"],
       label: true,
-      stagger: 80,
+      stagger: 70,
       maxConcurrent: 2,
+      typeText: true,
+      charDelay: 14,
+      maxTypeDuration: 1300,
+      pen: true,
       revealClass: "visible"
     });
   </script>
