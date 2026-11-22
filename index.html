@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio RexxHayanasi, backend developer dan open-source maintainer dari Indonesia.">
-  <meta name="theme-color" content="#ffdc58">
+  <meta name="theme-color" content="#08080c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RexxHayanasi — Developer Portfolio">
   <meta property="og:description" content="Backend developer dan open-source maintainer dari Indonesia. Merancang sistem cepat dan membangun produk yang berguna.">
@@ -19,7 +19,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/matifandy8/NeoBrutalismCSS/dist/index.min.css">
   <link rel="stylesheet" href="vendor/cursanimation.min.css">
   <link rel="stylesheet" href="styles.css">
   <noscript><style>.reveal { opacity: 1 !important; }</style></noscript>
@@ -176,12 +175,12 @@
   <script>
     CursAnimation.init({
       cursor: "ring",
-      color: "#111111",
-      color2: "#ffdc58",
-      size: 34,
+      color: "#f3f0e8",
+      color2: "#ffd84d",
+      size: 32,
       movement: "elastic",
       magnetic: { enabled: true, radius: 90, strength: 0.35 },
-      swarm: { enabled: true, count: 24, radius: 160, speed: 1, avoid: 54, hideCursor: true },
+      swarm: { enabled: true, count: 20, radius: 160, speed: 1, avoid: 52, hideCursor: true },
       trail: { enabled: true, length: 12, style: "dots", size: 0.5 },
       clickEffects: { enabled: true, ripple: true, particles: true, count: 10 },
       hoverEffects: true,
@@ -192,20 +191,20 @@
     CursAnimation.rebuild({
       selector: ".reveal",
       threshold: 0.14,
-      duration: matchMedia("(max-width: 720px)").matches ? 360 : 480,
+      duration: matchMedia("(max-width: 720px)").matches ? 340 : 440,
       agents: matchMedia("(max-width: 720px)").matches ? 1 : 2,
       color: "auto",
       autoDark: "#111111",
-      autoLight: "#ffdc58",
-      colors: ["#111111", "#ffdc58", "#ff8a00", "#0d99ff"],
+      autoLight: "#f3f0e8",
+      colors: ["#f3f0e8", "#ffd84d", "#5cc8ff", "#8b7cff", "#ff9ec4"],
       label: !matchMedia("(max-width: 720px)").matches,
       labelMinArea: 8000,
-      stagger: matchMedia("(max-width: 720px)").matches ? 40 : 70,
+      stagger: matchMedia("(max-width: 720px)").matches ? 34 : 60,
       maxConcurrent: matchMedia("(max-width: 720px)").matches ? 1 : 2,
       typeText: true,
       typeSelector: "h1,h2,h3,h4,h5,h6,p,li,blockquote",
-      charDelay: matchMedia("(max-width: 720px)").matches ? 10 : 14,
-      maxTypeDuration: matchMedia("(max-width: 720px)").matches ? 900 : 1300,
+      charDelay: matchMedia("(max-width: 720px)").matches ? 7 : 9,
+      maxTypeDuration: matchMedia("(max-width: 720px)").matches ? 780 : 980,
       pen: true,
       revealClass: "visible"
     });
