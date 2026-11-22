@@ -50,3 +50,45 @@ if ("IntersectionObserver" in window && sections.length) {
 
   sections.forEach((section) => observer.observe(section))
 }
+
+const isMobile = matchMedia("(max-width: 720px)").matches || matchMedia("(pointer: coarse)").matches
+const finePointer = matchMedia("(pointer: fine)").matches
+
+if (window.CursAnimation && finePointer && !isMobile) {
+  CursAnimation.init({
+    cursor: "ring",
+    color: "#f3f0e8",
+    color2: "#ffd84d",
+    size: 32,
+    movement: "elastic",
+    magnetic: { enabled: true, radius: 90, strength: 0.35 },
+    swarm: { enabled: true, count: 10, radius: 150, speed: 0.9, avoid: 50, hideCursor: true },
+    trail: { enabled: false },
+    clickEffects: { enabled: true, ripple: true, particles: true, count: 6 },
+    hoverEffects: true,
+    hoverScale: 1.7,
+    touch: "tap"
+  });
+}
+
+if (window.CursAnimation) {
+  CursAnimation.rebuild({
+    selector: ".reveal",
+    threshold: 0.14,
+    duration: isMobile ? 300 : 440,
+    agents: isMobile ? 1 : 2,
+    color: "auto",
+    autoDark: "#111111",
+    autoLight: "#f3f0e8",
+    colors: ["#f3f0e8", "#ffd84d", "#5cc8ff", "#8b7cff", "#ff9ec4"],
+    label: false,
+    stagger: isMobile ? 0 : 60,
+    maxConcurrent: isMobile ? 1 : 2,
+    typeText: true,
+    typeSelector: isMobile ? "h1,h2" : "h1,h2,h3,h4,h5,h6,p,li,blockquote",
+    charDelay: isMobile ? 4 : 9,
+    maxTypeDuration: isMobile ? 420 : 980,
+    pen: true,
+    revealClass: "visible"
+  });
+}

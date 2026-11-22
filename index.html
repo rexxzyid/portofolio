@@ -172,50 +172,8 @@
     <a href="#home">Kembali ke atas ↑</a>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/gh/rexxzyid/cursanimation@1.5.4/dist/cursanimation.min.js"></script>
-  <script>
-    const finePointer = matchMedia("(pointer: fine)").matches
-
-    if (window.CursAnimation && finePointer) {
-      CursAnimation.init({
-        cursor: "ring",
-        color: "#f3f0e8",
-        color2: "#ffd84d",
-        size: 32,
-        movement: "elastic",
-        magnetic: { enabled: true, radius: 90, strength: 0.35 },
-        swarm: { enabled: true, count: 10, radius: 150, speed: 0.9, avoid: 50, hideCursor: true },
-        trail: { enabled: false },
-        clickEffects: { enabled: true, ripple: true, particles: true, count: 6 },
-        hoverEffects: true,
-        hoverScale: 1.7,
-        touch: "tap"
-      });
-    }
-
-    if (window.CursAnimation) {
-      CursAnimation.rebuild({
-        selector: ".reveal",
-        threshold: 0.14,
-        duration: matchMedia("(max-width: 720px)").matches ? 340 : 440,
-        agents: matchMedia("(max-width: 720px)").matches ? 1 : 2,
-        color: "auto",
-        autoDark: "#111111",
-        autoLight: "#f3f0e8",
-        colors: ["#f3f0e8", "#ffd84d", "#5cc8ff", "#8b7cff", "#ff9ec4"],
-        label: false,
-        stagger: matchMedia("(max-width: 720px)").matches ? 34 : 60,
-        maxConcurrent: matchMedia("(max-width: 720px)").matches ? 1 : 2,
-        typeText: true,
-        typeSelector: "h1,h2,h3,h4,h5,h6,p,li,blockquote",
-        charDelay: matchMedia("(max-width: 720px)").matches ? 7 : 9,
-        maxTypeDuration: matchMedia("(max-width: 720px)").matches ? 780 : 980,
-        pen: true,
-        revealClass: "visible"
-      });
-    }
-  </script>
-  <script src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/rexxzyid/cursanimation@1.5.4/dist/cursanimation.min.js"></script>
+  <script defer src="script.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
